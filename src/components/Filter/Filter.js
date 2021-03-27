@@ -18,8 +18,17 @@ const Filter = ({ value, onChange }) => {
 //   onChange: PropTypes.func.isRequired,
 // };
 
+const getVisibleFilter = (allItems, filter) => {
+  const normalizedFilter = filter.toLowerCase();
+  const filteredContact = allItems.filter(({ name }) =>
+    name.toLowerCase().includes(normalizedFilter),
+  );
+  return filteredContact.length ? filter : '';
+};
+
 const mapStateToProps = state => {
-  return { value: state.contacts.filter };
+  const { filter, items } = state.contacts;
+  return { value: getVisibleFilter(items, filter) };
 };
 
 const mapDispatchToProps = dispatch => ({
