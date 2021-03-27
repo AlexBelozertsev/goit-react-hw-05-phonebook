@@ -31,9 +31,10 @@ const Contacts = ({ list, onDeliteContact }) => {
 
 const getVisibleContact = (allItems, filter) => {
   const normalizedFilter = filter.toLowerCase();
-  return allItems.filter(({ name }) =>
+  const filteredContact = allItems.filter(({ name }) =>
     name.toLowerCase().includes(normalizedFilter),
   );
+  return filteredContact.length ? filteredContact : allItems;
 };
 
 const mapStateToProps = state => {

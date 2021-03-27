@@ -18,9 +18,9 @@ const Filter = ({ value, onChange }) => {
 //   onChange: PropTypes.func.isRequired,
 // };
 
-const mapStateToProps = state => ({
-  value: state.contacts.filter,
-});
+const mapStateToProps = state => {
+  return { value: state.contacts.filter };
+};
 
 const mapDispatchToProps = dispatch => ({
   onChange: e => dispatch(phonebookActions.changeFilter(e.target.value)),

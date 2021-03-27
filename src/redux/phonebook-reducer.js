@@ -4,6 +4,11 @@ import types from './phonebook-types';
 const itemReducer = (state = [], { type, payload }) => {
   switch (type) {
     case types.ADD:
+      const checkDublicat = state.filter(item => payload.name === item.name);
+      if (checkDublicat.length) {
+        alert(`${payload.name} is already in contacts`);
+        return state;
+      }
       return [...state, payload];
 
     case types.DELETE:
