@@ -7,8 +7,12 @@ const Header = ({ text }) => (
   </div>
 );
 
+Header.defaultProps = {
+  text: '',
+};
+
 Header.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 export default Header;

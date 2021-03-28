@@ -1,6 +1,6 @@
 import React from 'react';
 import './Filter.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import phonebookActions from '../../redux/phonebook-actions';
 
@@ -13,10 +13,14 @@ const Filter = ({ value, onChange }) => {
   );
 };
 
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+Filter.defaultProps = {
+  value: '',
+};
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
 
 const getVisibleFilter = (allItems, filter) => {
   const normalizedFilter = filter.toLowerCase();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import style from './Contacts.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Contact from './Contact';
 import phonebookActions from '../../redux/phonebook-actions';
 
@@ -24,10 +24,10 @@ const Contacts = ({ list, onDeliteContact }) => {
   );
 };
 
-// Contacts.propTypes = {
-//   list: PropTypes.array.isRequired,
-//   onDeliteContact: PropTypes.func.isRequired,
-// };
+Contacts.propTypes = {
+  list: PropTypes.array.isRequired,
+  onDeliteContact: PropTypes.func.isRequired,
+};
 
 const getVisibleContact = (allItems, filter) => {
   const normalizedFilter = filter.toLowerCase();

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './Form.module.css';
 import { connect } from 'react-redux';
 import phonebookActions from '../../redux/phonebook-actions';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
 class Form extends Component {
@@ -64,9 +64,9 @@ class Form extends Component {
   }
 }
 
-// Form.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: object => dispatch(phonebookActions.addContact(object)),
